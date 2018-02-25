@@ -16,7 +16,7 @@ public class EmployeeTest {
 		{
 			System.out.println("імя = "+e.getName()+" зарплата = "+e.getSalary()+" дата найму на роботу = "+e.getHireDay());
 		}
-
+System.out.println("Enter Change");
 	}
 
 }
