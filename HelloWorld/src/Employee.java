@@ -1,37 +1,49 @@
 import java.util.*;
 import java.util.Date;
+
 public class Employee {
-	// конструктор
-	public Employee(String n, double s, int year, int month, int day) {
+	// designer
+	public Employee(String n, double s) {
 		name = n;
 		salary = s;
-		GregorianCalendar calendar = new GregorianCalendar(year, month - 1, day);
-		hireDay=calendar.getTime();
+		id = 0;
 	}
-//Метод 1
+
+	// method 1
 	public String getName() {
 		return name;
 	}
-		//Метод 2
-	public double getSalary()
-	{
+
+	// method 2
+	public double getSalary() {
 		return salary;
 	}
-	//Метод 3
-	public Date getHireDay()
-	{
-		return hireDay;
+
+	public int getId() {
+		return id;
+
 	}
-	public void raiseSalary(double byPercent)
-	{
-		double raise=salary*byPercent/100;
-		salary+=raise;
+
+	// method 3
+	public void setId() {
+		id = nextId;
+		nextId++;
 	}
-		
-		// Поля екземпляра
-		private String name;
-		private double salary;
-		private Date hireDay;
-	
-	
+
+	public static int getNextId() {
+		return nextId;
+	}
+
+	public static void main(String[] args) {
+		Employee e = new Employee("Harry", 50000);
+		System.out.println(e.getName() + " " + e.getSalary());
+	}
+
+	// instance fields
+	private String name;
+	private double salary;
+	// private Date hireDay;
+	private int id;
+	private static int nextId = 1;
+
 }
