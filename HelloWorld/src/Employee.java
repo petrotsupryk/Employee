@@ -18,10 +18,15 @@ public class Employee {
 	public double getSalary() {
 		return salary;
 	}
-
+	
+	public void raiseSalary(double byPersent)
+	{
+		double raise = salary * byPersent/100;
+		salary += raise;
+	}
+/*
 	public int getId() {
 		return id;
-
 	}
 
 	// method 3
@@ -38,6 +43,9 @@ public class Employee {
 		Employee e = new Employee("Harry", 50000);
 		System.out.println(e.getName() + " " + e.getSalary());
 	}
+*/
+	
+	
 
 	// instance fields
 	private String name;
