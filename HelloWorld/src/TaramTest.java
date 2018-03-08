@@ -40,7 +40,7 @@ public class TaramTest {
 		System.out.println("End of Method: x= " + x);
 	}
 
-	public static void tripleSalary(Employee x) // work
+	public static void tripleSalary(Employee x) // work 
 	{
 		x.raiseSalary(200);
 		System.out.println("End of Method: salary= " + x.getSalary());
