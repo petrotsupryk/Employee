@@ -6,7 +6,15 @@ public class Employee {
 	public Employee(String n, double s) {
 		name = n;
 		salary = s;
-		id = 0;
+	}
+
+	public Employee(double s) {
+		// виклик конструктора Employee(String)
+		this("Employee #" + nextId, s);
+	}
+
+	// конструктор по замовчуванню
+	public Employee() {
 	}
 
 	// method 1
@@ -18,13 +26,12 @@ public class Employee {
 	public double getSalary() {
 		return salary;
 	}
-	
-	public void raiseSalary(double byPersent)
-	{
-		double raise = salary * byPersent/100;
+
+	public void raiseSalary(double byPersent) {
+		double raise = salary * byPersent / 100;
 		salary += raise;
 	}
-/*
+
 	public int getId() {
 		return id;
 	}
@@ -43,9 +50,6 @@ public class Employee {
 		Employee e = new Employee("Harry", 50000);
 		System.out.println(e.getName() + " " + e.getSalary());
 	}
-*/
-	
-	
 
 	// instance fields
 	private String name;
@@ -54,4 +58,15 @@ public class Employee {
 	private int id;
 	private static int nextId = 1;
 
+	// статичний блок ініціалізації
+	static {
+		Random generator = new Random();
+		// задаєм nextId як випадкове число від 0 до 9999
+		nextId = generator.nextInt(10000);
+	}
+	
+	{
+		id=nextId;
+		nextId++;
+	}
 }
